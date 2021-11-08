@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+.wrapper {
+  display: flex;
+  background: #fff;
+  max-width: 690px;
+  width: 100%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+    0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f7f7f7;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    flex-wrap: wrap-reverse;
+    max-width: 390px;
+  }
+}
+
+.form {
+  padding: 25px 30px;
+  border: none;
+  width: 100%;
+}
+
+:is(.form)::-webkit-scrollbar {
+  width: 0px;
+}
+
+.form header {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid darkgrey;
+  align-items: center;
+  display: flex;
+}
+
+.form form {
+  margin: 20px 0;
+}
+
+.form form .name-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.setmargin {
+  margin-top: 20px;
+}
+
+.form .name-details .field:first-child {
+  margin-right: 10px;
+  width: 40%;
+}
+
+.form .name-details .field:last-child {
+  margin-left: 10px;
+  width: 55%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .form .name-details .field:first-child {
+    width: auto;
+  }
+
+  .form .name-details .field:last-child {
+    width: auto;
+    margin-left: 0px;
+  }
+
+  .form form .name-details {
+    display: block;
+  }
+
+  .headDiv {
+    width: 100% !important;
+  }
+
+  .imgLogo {
+    width: 32% !important;
+  }
+
+  .vechlImg {
+    width: 45% !important;
+  }
+
+  #adNotas {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .imgLogo {
+    width: 45% !important;
+  }
+
+  .vechlImg {
+    width: 70% !important;
+  }
+}
+
+.headDiv {
+  margin-top: 8%;
+}
+
+.form form .field {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  position: relative;
+}
+
+.form form .field label {
+  margin-bottom: 9px;
+}
+
+.form form .input input,
+textarea {
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.form form .input textarea::placeholder-shown ~ label {
+  padding: 20px;
+  font-size: 16px;
+  top: 140px;
+}
+
+.form form .input > input:valid ~ span {
+  display: none;
+}
+
+.form form .input > input:invalid ~ span {
+  color: #721c24;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 5px;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.form form .field input {
+  outline: none;
+}
+
+.form form .button input {
+  height: 45px;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  background: #1e90ff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 13px;
+}
+
+.textAd {
+  margin: 0px;
+  width: 630px !important;
+  height: 101px;
+  margin-top: 20px !important;
+  min-height: 50px !important;
+}
+
+.imgDiv {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.imgDivLogo {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+}
+
+/* DropDown */
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #2980b9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+/* Success */
+
+.sucessDiv {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 19px;
+  align-items: center;
+  display: flex;
+  user-select: none;
+  flex-direction: column;
+}
+
+.sucessDiv > ion-icon {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Error */
+.ErrorDiv {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 19px;
+  align-items: center;
+  display: flex;
+  user-select: none;
+  flex-direction: column;
+}
+
+.ErrorDiv > ion-icon {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.errorDesc {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}

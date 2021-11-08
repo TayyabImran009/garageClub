@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!---CSS--->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <title>Form 3</title>
+</head>
+
+<body>
+    <div class="imgDivLogo">
+        <img src="{% static 'images/logo.png' %}" width="13%" class="imgLogo">
+    </div>
+  <div class="headDiv">
+    <div class="imgDiv">
+        <img src="{{logo}}" width="40%" class="vechlImg">
+    </div>
+
+    <div class="wrapper">
+        <section class="form signup">
+            <header>DOCUMENT INFORMATION</header>
+            <form class="form" method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="name-details name2">
+                    <div class="field input">
+                        <label>Template name:</label>
+                        <div class="dropdown">
+                            <div id="ButtonDiv" style="display: inline-block;">
+                                <button type="button" onclick="myFunction()" class="dropbtn">Select Template</button>
+                            </div>
+                            <div id="myDropdown" class="dropdown-content">
+                                {% for t in temp %}
+                                    <a id="templateOption" data-Rid={{t.template_id}}>{{t.title}}</a>
+                                {% endfor %}
+                            </div>
+                          </div>
+                        <input id="inputTemplateOption" type="hidden" placeholder="Template name" required name="templateID">
+                    </div>
+                    <div class="field input">
+                        <label>Complete name</label>
+                        <input type="text" placeholder="Complete name" required name="completeName" value="{{completeName}}">
+                    </div>
+                </div>
+
+                
+                <div class="field input">
+                    <label>Document number</label>
+                    <input type="text" placeholder="Document number" name="documentNumber" required value="{{dNumber}}">
+                </div>
+                <div class="field input" style="display:block">
+                    <label>Email</label>
+                    <textarea rows = "5" cols = "50" id="formMail" placeholder="Email" name="email" required style="height: 100px;">{{email}}</textarea> 
+                </div>
+                 
+
+                <div class="field input">
+                    <label>Payment form</label>
+                    <input type="text" placeholder="Payment form" name="paymentForm" required value="{{paymentForm}}">
+                </div>
+
+                <header>CAR DETAILS</header>
+
+                <div class="name-details name2 setmargin">
+                    <div class="field input">
+                        <label>Make</label>
+                        <input type="text" placeholder="Make" required name="make" value="{{make}}">
+                    </div>
+                    <div class="field input">
+                        <label>Model</label>
+                        <input type="text" id="formMail" placeholder="Model" required name="model" value="{{model}}">
+                    </div>
+                </div>
+
+                <div class="name-details name2">
+                    <div class="field input">
+                        <label>Version</label>
+                        <input type="text" placeholder="Version" required name="version" value="{{version}}">
+                    </div>
+                    <div class="field input">
+                        <label>Plate</label>
+                        <input type="text" id="formMail" placeholder="Plate" required name="plate" value="{{plate}}">
+                    </div>
+                </div>
+
+                <div class="name-details name2">
+                    <div class="field input">
+                        <label>VIN</label>
+                        <input type="text" placeholder="VIN" required name="vin" value="{{vin}}">
+                    </div>
+                    <div class="field input">
+                        <label>Year</label>
+                        <input type="text" id="formMail" placeholder="Year" required name="year" value="{{year}}">
+                    </div>
+                </div>
+                <div class="field input">
+                    <label>KMs</label>
+                    <input type="text" id="formMail" placeholder="KMs" required name="kms" value="{{kms}}">
+                </div>
+
+                <header>ADDITIONAL NOTES</header>
+                <div class="field input">
+                    <textarea type="text" placeholder="ADDITIONAL NOTES" id="adNotas" class="textAd"></textarea>
+                </div>
+                <div class="field button" id="boxButton">
+                    <input type="submit" id="formButton" name="submit" value="Solicitar firma">
+                </div>
+
+            </form>
+        </section>
+    </div>
+  </div>
+  <script src="{% static 'js/dropDown.js' %}"></script>
+</body>
+
+</html>
