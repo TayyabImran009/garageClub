@@ -28,8 +28,8 @@ for (let i = 0; i < templateOption.length; i++) {
   templateOption[i].addEventListener("click", function (event) {
     inputTemplateOption.value = templateOption[i].getAttribute("data-Rid");
     ButtonDiv.innerHTML =
-      "<button type='button' onclick='myFunction()' class='dropbtn'>" +
+      "<button type='button' class='dropbtn'>" +
       templateOption[i].textContent +
-      "</button>";
+      " <i class='fa fa-angle-down' aria-hidden='true'></i></button>";
   });
 }
