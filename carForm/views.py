@@ -50,8 +50,8 @@ def home(request, completeName, email, logo, make, model, version, plate, vin, y
                     message='Glad we could come to an agreement.',
                     signers=[{'role_name': 'Customer', 'name': cName,
                               'email_address': e}],
-                    custom_fields=[{'tName': selectedTemp.title,
-                                    'cName': cName, 'dNumber': dNumber, 'email': e, 'paymentForm': paymentForm, 'make': make, 'model': model, 'version': version, 'plate': plate, 'vin': vin, 'year': year, 'kms': kms}]
+                    custom_fields=[{'cName': cName, 'dNumber': dNumber, 'paymentForm': paymentForm, 'make': make,
+                                    'model': model, 'version': version, 'plate': plate, 'vin': vin, 'year': year, 'kms': kms}]
                 )
             except:
                 return render(request, 'error.html')
