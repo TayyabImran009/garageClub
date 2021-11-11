@@ -27,6 +27,7 @@
             <header>DOCUMENT INFORMATION</header>
             <form class="form" method="POST" action="" enctype="multipart/form-data">
                 {% csrf_token %}
+                <header style="margin-bottom: 30px;">Contract information</header>
                 <div class="name-details name2">
                     <div class="field input">
                         <label>Template name:</label>
@@ -42,17 +43,54 @@
                         </div>
                         <input id="inputTemplateOption" type="hidden" placeholder="Template name" required name="templateID">
                     </div>
+
                     <div class="field input">
-                        <label>Complete name</label>
-                        <input type="text" placeholder="Complete name" required name="completeName" value="{{completeName}}">
+                        <label>Payment Form:</label>
+                        <div class="dropdown">
+                            <div id="formButtonDiv" onclick="myFunction2()" style="display: inline-block;">
+                                <button type="button" class="dropbtn">Select Form <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                            </div>
+                            <div id="myDropdown2" class="dropdown-content">
+                                <a id="formOption" data-Rid="contado">Contado</a>
+                                <a id="formOption" data-Rid="transferencia">Transferencia</a>
+                            </div>
+                        </div>
+                        <input id="inputFormOption" type="hidden" required name="paymentForm">
                     </div>
                 </div>
 
-                
+                <div class="field input">
+                    <label>Selling Price</label>
+                    <input type="text" placeholder="Selling Price" required name="sellingPrice" value="{{sellingPrice}}">
+                </div>
+
+                <header style="margin-bottom: 30px;">Client Information</header>
+
+                <div class="field input">
+                    <label>Complete name</label>
+                    <input type="text" placeholder="Complete name" required name="completeName" value="{{completeName}}">
+                </div>
+
                 <div class="field input">
                     <label>Document number</label>
                     <input type="text" placeholder="Document number" name="documentNumber" required value="{{dNumber}}">
                 </div>
+
+                <div class="field input">
+                    <label>Address</label>
+                    <input type="text" placeholder="Address" name="address" required value="{{address}}">
+                </div>
+
+                <div class="field input">
+                    <label>City</label>
+                    <input type="text" placeholder="City" name="city" required value="{{city}}">
+                </div>
+
+                <div class="field input">
+                    <label>Province</label>
+                    <input type="text" placeholder="Province" name="province" required value="{{province}}">
+                </div>
+
                 <div class="field input" style="display:block">
                     <label>Email</label>
                     <textarea rows = "5" cols = "50" id="formMail" placeholder="Email" name="email" required style="height: 100px;">{{email}}</textarea> 
@@ -60,8 +98,8 @@
                  
 
                 <div class="field input">
-                    <label>Payment form</label>
-                    <input type="text" placeholder="Payment form" name="paymentForm" required value="{{paymentForm}}">
+                    <label>Phone</label>
+                    <input type="number" placeholder="Phone Number" name="phone" required value="{{phone}}">
                 </div>
 
                 <header>CAR DETAILS</header>
@@ -99,8 +137,8 @@
                     </div>
                 </div>
                 <div class="field input">
-                    <label>KMs</label>
-                    <input type="text" id="formMail" placeholder="KMs" required name="kms" value="{{kms}}">
+                    <label>Previous Usage</label>
+                    <input type="text" id="formMail" placeholder="Previous Usage" required name="previousUsage" value="{{previousUsage}}">
                 </div>
 
                 <header>ADDITIONAL NOTES</header>

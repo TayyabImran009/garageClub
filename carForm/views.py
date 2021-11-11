@@ -4,7 +4,7 @@ from hellosign_sdk import HSClient
 # Create your views here.
 
 
-def home(request, completeName, email, logo, make, model, version, plate, vin, year, kms):
+def home(request, completeName, email, logo, make, model, version, plate, vin, year, sellingPrice, address, city, province, phone):
     client = HSClient(
         api_key='b06489bfd18927d5cd99f173d1a428647f0669214b101c8fc18a72f2bd4f0df0')
     temp = client.get_template_list()
@@ -20,7 +20,11 @@ def home(request, completeName, email, logo, make, model, version, plate, vin, y
         'plate': plate,
         'vin': vin,
         'year': year,
-        'kms': kms
+        'sellingPrice': sellingPrice,
+        'address': address,
+        'city': city,
+        'province': province,
+        'phone': phone
     }
 
     if request.method == 'POST':
@@ -35,7 +39,12 @@ def home(request, completeName, email, logo, make, model, version, plate, vin, y
         plate = request.POST['plate']
         vin = request.POST['vin']
         year = request.POST['year']
-        kms = request.POST['kms']
+        sellingPrice = request.POST['sellingPrice']
+        address = request.POST['address']
+        city = request.POST['city']
+        province = request.POST['province']
+        phone = request.POST['phone']
+
         additionalNotes = request.POST['additionalNotes']
         selectedTemp = []
         for t in temp:
@@ -52,7 +61,7 @@ def home(request, completeName, email, logo, make, model, version, plate, vin, y
                     signers=[{'role_name': 'Customer', 'name': cName,
                               'email_address': e}],
                     custom_fields=[{'cName': cName, 'dNumber': dNumber, 'paymentForm': paymentForm, 'make': make,
-                                    'model': model, 'version': version, 'plate': plate, 'vin': vin, 'year': year, 'kms': kms, 'additionalNotes': additionalNotes}]
+                                    'model': model, 'version': version, 'plate': plate, 'vin': vin, 'year': year, 'sellingPrice': sellingPrice, 'address': address, 'city': city, 'province': province, 'phone': phone, 'additionalNotes': additionalNotes}]
                 )
             except:
                 return render(request, 'error.html')

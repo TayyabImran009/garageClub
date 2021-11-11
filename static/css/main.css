@@ -211,7 +211,16 @@ textarea {
 
 /* DropDown */
 
+#myDropdown {
+  width: 100%;
+}
+
 #ButtonDiv {
+  width: 100%;
+  border: solid 1px #ccc;
+}
+
+#formButtonDiv {
   width: 100%;
   border: solid 1px #ccc;
 }
@@ -262,6 +271,13 @@ textarea {
 .show {
   display: block;
 }
+
+/* DropDown2 */
+
+#myDropdown2 {
+  width: 100%;
+}
+
 /* Success */
 
 .sucessDiv {
