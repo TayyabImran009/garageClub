@@ -10,6 +10,12 @@ function myFunction2() {
   document.getElementById("myDropdown2").classList.toggle("show");
 }
 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction3() {
+  document.getElementById("myDropdown3").classList.toggle("show");
+}
+
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
   if (!event.target.matches(".dropbtn")) {
@@ -56,6 +62,29 @@ for (let i = 0; i < formOption.length; i++) {
     formButtonDiv.innerHTML =
       "<button type='button' class='dropbtn'>" +
       formOption[i].textContent +
+      " <i class='fa fa-angle-down' aria-hidden='true'></i></button>";
+  });
+}
+
+//************************************************** Previous Usage dropdown Selection
+
+const previousUsageOption = document.querySelectorAll("#previousUsageOption");
+
+const inputPreviousUsageOption = document.getElementById(
+  "inputPreviousUsageOption"
+);
+
+const previousUsageButtonDiv = document.getElementById(
+  "previousUsageButtonDiv"
+);
+
+for (let i = 0; i < previousUsageOption.length; i++) {
+  previousUsageOption[i].addEventListener("click", function (event) {
+    inputPreviousUsageOption.value =
+      previousUsageOption[i].getAttribute("data-Rid");
+    previousUsageButtonDiv.innerHTML =
+      "<button type='button' class='dropbtn'>" +
+      previousUsageOption[i].textContent +
       " <i class='fa fa-angle-down' aria-hidden='true'></i></button>";
   });
 }

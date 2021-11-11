@@ -220,6 +220,11 @@ textarea {
   border: solid 1px #ccc;
 }
 
+#previousUsageButtonDiv {
+  width: 100%;
+  border: solid 1px #ccc;
+}
+
 #formButtonDiv {
   width: 100%;
   border: solid 1px #ccc;

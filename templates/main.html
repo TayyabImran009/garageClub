@@ -136,9 +136,19 @@
                         <input type="text" id="formMail" placeholder="Year" required name="year" value="{{year}}">
                     </div>
                 </div>
+
                 <div class="field input">
-                    <label>Previous Usage</label>
-                    <input type="text" id="formMail" placeholder="Previous Usage" required name="previousUsage" value="{{previousUsage}}">
+                    <label>Previous Usage:</label>
+                    <div class="dropdown">
+                        <div id="previousUsageButtonDiv" onclick="myFunction3()" style="display: inline-block;">
+                            <button type="button" class="dropbtn">Previous Usage <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                        </div>
+                        <div id="myDropdown3" class="dropdown-content" style="width: 100%;">
+                            <a id="previousUsageOption" data-Rid="particular">Particular</a>
+                            <a id="previousUsageOption" data-Rid="profesional">Profesional</a>
+                        </div>
+                    </div>
+                    <input id="inputPreviousUsageOption" type="hidden" required name="previousUsage">
                 </div>
 
                 <header>ADDITIONAL NOTES</header>

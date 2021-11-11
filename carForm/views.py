@@ -44,7 +44,7 @@ def home(request, completeName, email, logo, make, model, version, plate, vin, y
         city = request.POST['city']
         province = request.POST['province']
         phone = request.POST['phone']
-
+        previousUsage = request.POST['previousUsage']
         additionalNotes = request.POST['additionalNotes']
         selectedTemp = []
         for t in temp:
@@ -61,7 +61,7 @@ def home(request, completeName, email, logo, make, model, version, plate, vin, y
                     signers=[{'role_name': 'Customer', 'name': cName,
                               'email_address': e}],
                     custom_fields=[{'cName': cName, 'dNumber': dNumber, 'paymentForm': paymentForm, 'make': make,
-                                    'model': model, 'version': version, 'plate': plate, 'vin': vin, 'year': year, 'sellingPrice': sellingPrice, 'address': address, 'city': city, 'province': province, 'phone': phone, 'additionalNotes': additionalNotes}]
+                                    'model': model, 'version': version, 'plate': plate, 'vin': vin, 'year': year, 'sellingPrice': sellingPrice, 'address': address, 'city': city, 'province': province, 'previousUsage': previousUsage, 'additionalNotes': additionalNotes}]
                 )
             except:
                 return render(request, 'error.html')
